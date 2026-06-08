@@ -1,1 +1,8 @@
-{"timestamp":"00:00:00.738","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:01.576","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:05.094","source":"Server","level":"LOG","message":"○ Compiling / ..."}
+{"timestamp":"00:00:07.191","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:06:02.881","source":"Browser","level":"ERROR","message":"uncaughtError: TypeError: Failed to construct 'Image': Please use the 'new' operator, this DOM object constructor cannot be called as a function."}
+{"timestamp":"00:07:05.109","source":"Server","level":"ERROR","message":"⨯ Error: Image with src \"https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBkYXJrJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3OTE0OTIwMXww&ixlib=rb-4.1.0&q=80&w=1080\" is missing required \"width\" property."}
+{"timestamp":"00:07:05.282","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload due to a runtime error."}
+{"timestamp":"00:07:06.483","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:07:07.890","source":"Browser","level":"ERROR","message":"uncaughtError: Error: Image with src \"https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBkYXJrJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3OTE0OTIwMXww&ixlib=rb-4.1.0&q=80&w=1080\" is missing required \"width\" property."}

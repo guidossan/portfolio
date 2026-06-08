@@ -1,8 +1,8 @@
 {
-	"recommendations": [
-		"biomejs.biome",
-		"prisma.prisma",
-		"bradlc.vscode-tailwindcss",
-		"usernamehw.errorlens"
-	]
+  "recommendations": [
+    "biomejs.biome",
+    "prisma.prisma",
+    "bradlc.vscode-tailwindcss",
+    "usernamehw.errorlens"
+  ]
 }
