@@ -15,8 +15,8 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 right-0 left-0 z-50 flex w-full flex-row items-center justify-center border-border/40 border-b bg-background/95">
-      <div className="mx-auto w-full py-4">
-        <div className="flex items-center justify-between py-10">
+      <div className="container m-auto p-5">
+        <div className="flex items-center justify-between">
           <div className="font-semibold text-xl tracking-tight">Portfolio</div>
 
           <div className="hidden items-center gap-8 md:flex">
