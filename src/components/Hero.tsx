@@ -19,8 +19,8 @@ export function Hero() {
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-linear-to-br from-violet-500/10 via-background to-blue-500/10" />
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 h-96 w-96 animate-pulse rounded-full bg-violet-500/20 blur-3xl" />
-        <div className="absolute right-1/4 bottom-1/4 h-96 w-96 animate-pulse rounded-full bg-blue-500/20 blur-3xl delay-1000" />
+        <div className="absolute top-1/4 left-1/4 h-60 w-60 rounded-full bg-violet-500/10" />
+        <div className="absolute right-1/4 bottom-1/4 h-60 w-60 rounded-full bg-blue-500/10" />
       </div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-32 lg:grid-cols-2">
@@ -131,11 +131,7 @@ export function Hero() {
         >
           <div className="relative aspect-square">
             {/* Floating cards */}
-            <motion.div
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-0 right-0 h-48 w-64 rounded-2xl border border-border/50 bg-linear-to-br from-violet-500/20 to-purple-500/20 p-6 backdrop-blur-sm"
-            >
+            <div className="absolute top-0 right-0 h-48 w-64 rounded-2xl border border-border/50 bg-card/70 p-6 shadow-2xl shadow-violet-500/10 backdrop-blur-sm">
               <div className="space-y-3">
                 <div className="h-3 w-20 rounded bg-violet-400/30" />
                 <div className="h-2 w-32 rounded bg-violet-400/20" />
@@ -146,18 +142,9 @@ export function Hero() {
                   <div className="h-8 w-8 rounded-lg bg-violet-400/30" />
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              animate={{ y: [0, 20, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1,
-              }}
-              className="absolute bottom-0 left-0 h-56 w-72 rounded-2xl border border-border/50 bg-linear-to-br from-blue-500/20 to-cyan-500/20 p-6 backdrop-blur-sm"
-            >
+            <div className="absolute bottom-0 left-0 h-56 w-72 rounded-2xl border border-border/50 bg-card/70 p-6 shadow-2xl shadow-blue-500/10 backdrop-blur-sm">
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-green-400" />
@@ -172,15 +159,11 @@ export function Hero() {
                   <div className="h-16 rounded-lg bg-blue-400/20" />
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              animate={{ rotate: [0, 5, 0, -5, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-1/2 left-1/2 flex h-48 w-48 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-border/50 bg-linear-to-br from-primary/10 to-secondary/10 backdrop-blur-sm"
-            >
+            <div className="absolute top-1/2 left-1/2 flex h-48 w-48 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-border/50 bg-card/70 shadow-2xl shadow-background/20 backdrop-blur-sm">
               <div className="text-6xl">💻</div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>

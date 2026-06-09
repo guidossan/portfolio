@@ -67,7 +67,7 @@ export function About() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="group relative"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-violet-500/20 to-blue-500/20 blur-xl transition-all group-hover:blur-2xl" />
+                  <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-violet-500/20 to-blue-500/20 blur-lg transition-all group-hover:blur-xl" />
                   <div className="relative rounded-2xl border border-border/50 bg-card p-6 backdrop-blur-sm transition-all hover:border-violet-500/50">
                     <Icon className="mb-4 h-8 w-8 text-violet-500" />
                     <div className="mb-2 font-semibold text-3xl">

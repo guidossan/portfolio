@@ -156,7 +156,7 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-violet-500/10 to-blue-500/10 blur-2xl" />
+            <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-violet-500/10 to-blue-500/10 blur-lg" />
             <form
               onSubmit={handleSubmit}
               className="relative space-y-6 rounded-2xl border border-border/50 bg-card p-8 backdrop-blur-sm"

@@ -92,7 +92,7 @@ export function Skills() {
               className="group relative"
             >
               <div
-                className={`absolute inset-0 bg-linear-to-br ${category.gradient} rounded-2xl opacity-50 blur-xl transition-all group-hover:blur-2xl`}
+                className={`absolute inset-0 bg-linear-to-br ${category.gradient} rounded-2xl opacity-50 blur-lg transition-all group-hover:blur-xl`}
               />
               <div className="relative h-full rounded-2xl border border-border/50 bg-card p-6 backdrop-blur-sm transition-all hover:border-violet-500/50">
                 <h3 className="mb-4 text-xl">{category.title}</h3>

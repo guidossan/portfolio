@@ -101,7 +101,7 @@ export function Experience() {
                 className="group relative"
               >
                 <div
-                  className={`absolute inset-0 bg-linear-to-br ${approach.linear} rounded-2xl opacity-50 blur-xl transition-all group-hover:blur-2xl`}
+                  className={`absolute inset-0 bg-linear-to-br ${approach.linear} rounded-2xl opacity-50 blur-lg transition-all group-hover:blur-xl`}
                 />
                 <div className="relative h-full rounded-2xl border border-border/50 bg-card p-8 backdrop-blur-sm transition-all hover:border-violet-500/50">
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-violet-500/20 to-blue-500/20">

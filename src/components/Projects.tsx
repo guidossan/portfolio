@@ -107,11 +107,13 @@ export function Projects() {
                 className={`group relative ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
               >
                 <div
-                  className={`absolute inset-0 bg-linear-to-br ${project.linear} rounded-3xl blur-2xl transition-all group-hover:blur-3xl`}
+                  className={`absolute inset-0 bg-linear-to-br ${project.linear} rounded-3xl blur-lg transition-all group-hover:blur-xl`}
                 />
                 <div className="relative overflow-hidden rounded-2xl border border-border/50 transition-all group-hover:border-violet-500/50">
                   <div className="relative aspect-video">
                     <Image
+                      width={150}
+                      height={100}
                       src={project.image}
                       alt={project.name}
                       className="h-full w-full object-cover"
