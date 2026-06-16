@@ -3,6 +3,7 @@
 import { ArrowRight, FolderGit2, Link, Mail } from "lucide-react"
 import { motion } from "motion/react"
 import { useLanguage } from "../app/contexts/LanguageContext"
+import { ProfilePhoto } from "./ProfilePhoto"
 
 export function Hero() {
   const { t } = useLanguage()
@@ -122,50 +123,7 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Right: Visual Element */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative hidden lg:block"
-        >
-          <div className="relative aspect-square">
-            {/* Floating cards */}
-            <div className="absolute top-0 right-0 h-48 w-64 rounded-2xl border border-border/50 bg-card/70 p-6 shadow-2xl shadow-violet-500/10 backdrop-blur-sm">
-              <div className="space-y-3">
-                <div className="h-3 w-20 rounded bg-violet-400/30" />
-                <div className="h-2 w-32 rounded bg-violet-400/20" />
-                <div className="h-2 w-28 rounded bg-violet-400/20" />
-                <div className="mt-4 flex gap-2">
-                  <div className="h-8 w-8 rounded-lg bg-violet-400/30" />
-                  <div className="h-8 w-8 rounded-lg bg-violet-400/30" />
-                  <div className="h-8 w-8 rounded-lg bg-violet-400/30" />
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute bottom-0 left-0 h-56 w-72 rounded-2xl border border-border/50 bg-card/70 p-6 shadow-2xl shadow-blue-500/10 backdrop-blur-sm">
-              <div className="space-y-3">
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-green-400" />
-                  <div className="h-2 w-16 rounded bg-blue-400/30" />
-                </div>
-                <div className="mt-4 grid grid-cols-3 gap-2">
-                  <div className="h-16 rounded-lg bg-blue-400/20" />
-                  <div className="h-16 rounded-lg bg-blue-400/20" />
-                  <div className="h-16 rounded-lg bg-blue-400/20" />
-                  <div className="h-16 rounded-lg bg-blue-400/20" />
-                  <div className="h-16 rounded-lg bg-blue-400/20" />
-                  <div className="h-16 rounded-lg bg-blue-400/20" />
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute top-1/2 left-1/2 flex h-48 w-48 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-border/50 bg-card/70 shadow-2xl shadow-background/20 backdrop-blur-sm">
-              <div className="text-6xl">💻</div>
-            </div>
-          </div>
-        </motion.div>
+        <ProfilePhoto />
       </div>
     </section>
   )

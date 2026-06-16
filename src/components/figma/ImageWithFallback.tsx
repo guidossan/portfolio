@@ -26,6 +26,7 @@ export function ImageWithFallback({
     >
       <div className="flex h-full w-full items-center justify-center">
         <Image
+          loading="lazy"
           src={ERROR_IMG_SRC}
           alt="Error loading image"
           {...rest}
@@ -35,6 +36,7 @@ export function ImageWithFallback({
     </div>
   ) : (
     <Image
+      loading="lazy"
       src={src}
       alt={alt}
       className={className}

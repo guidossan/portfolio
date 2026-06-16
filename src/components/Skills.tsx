@@ -9,23 +9,17 @@ export function Skills() {
   const skillCategories = [
     {
       title: t("skills.frontend"),
-      skills: [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Redux",
-        "Vue.js",
-      ],
+      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"],
       gradient: "from-blue-500/20 to-cyan-500/20",
     },
     {
       title: t("skills.backend"),
       skills: [
+        "Java",
+        "Spring Boot",
         "Node.js",
         "Express",
         "Python",
-        "FastAPI",
         "REST APIs",
         "GraphQL",
       ],
@@ -33,37 +27,18 @@ export function Skills() {
     },
     {
       title: t("skills.databases"),
-      skills: [
-        "PostgreSQL",
-        "MongoDB",
-        "Redis",
-        "Firebase",
-        "Supabase",
-        "MySQL",
-      ],
+      skills: ["PostgreSQL", "MongoDB", "MySQL", "Supabase"],
       gradient: "from-green-500/20 to-emerald-500/20",
     },
     {
       title: t("skills.cloud"),
-      skills: ["Docker", "AWS", "Vercel", "GitHub Actions", "Linux", "Nginx"],
+      skills: ["Docker", "Vercel", "Pipeline", "Linux"],
       gradient: "from-orange-500/20 to-red-500/20",
     },
     {
       title: t("skills.tools"),
-      skills: ["Git", "VS Code", "Postman", "Figma", "Webpack", "Vite"],
+      skills: ["Git", "VS Code", "Postman", "Figma", "Vite"],
       gradient: "from-pink-500/20 to-rose-500/20",
-    },
-    {
-      title: t("skills.uiux"),
-      skills: [
-        "Responsive Design",
-        "Accessibility",
-        "Design Systems",
-        "Animations",
-        "Prototyping",
-        "User Testing",
-      ],
-      gradient: "from-indigo-500/20 to-blue-500/20",
     },
   ]
 

@@ -8,10 +8,10 @@ export function Experience() {
   const { t } = useLanguage()
 
   const metrics = [
-    { label: t("experience.metric1"), value: "30+" },
+    { label: t("experience.metric1"), value: "5+" },
     { label: t("experience.metric2"), value: "20+" },
     { label: t("experience.metric3"), value: "150+" },
-    { label: t("experience.metric4"), value: "25+" },
+    { label: t("experience.metric4"), value: "3+" },
   ]
 
   const approaches = [

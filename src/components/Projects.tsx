@@ -16,12 +16,11 @@ export function Projects() {
       description: t("project1.description"),
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBkYXJrJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3OTE0OTIwMXww&ixlib=rb-4.1.0&q=80&w=1080",
-      tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      tech: ["Angular", "TypeScript", "Node.js", "Tailwind CSS"],
       features: [
         t("project1.feature1"),
         t("project1.feature2"),
         t("project1.feature3"),
-        t("project1.feature4"),
       ],
       challenges: [
         t("project1.challenge1"),
@@ -29,6 +28,8 @@ export function Projects() {
         t("project1.challenge3"),
       ],
       linear: "from-violet-500/30 to-purple-500/30",
+      viewDemoLink: "https://lorenzinitech-listatarefas.vercel.app/",
+      viewGithubLink: "https://github.com/guidossan/listaDeTarefas",
     },
     {
       id: "project2",
@@ -37,12 +38,11 @@ export function Projects() {
       description: t("project2.description"),
       image:
         "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBkYXJrJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3OTE0OTIwMXww&ixlib=rb-4.1.0&q=80&w=1080",
-      tech: ["Next.js", "Express", "MongoDB", "Redis", "Docker"],
+      tech: ["React", "Next.js", "PostgreSQL", "Java", "Docker"],
       features: [
         t("project2.feature1"),
         t("project2.feature2"),
         t("project2.feature3"),
-        t("project2.feature4"),
       ],
       challenges: [
         t("project2.challenge1"),
@@ -50,27 +50,7 @@ export function Projects() {
         t("project2.challenge3"),
       ],
       linear: "from-blue-500/30 to-cyan-500/30",
-    },
-    {
-      id: "project3",
-      name: t("project3.name"),
-      tagline: t("project3.tagline"),
-      description: t("project3.description"),
-      image:
-        "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBkYXJrJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3OTE0OTIwMXww&ixlib=rb-4.1.0&q=80&w=1080",
-      tech: ["React", "FastAPI", "PostgreSQL", "Recharts", "AWS"],
-      features: [
-        t("project3.feature1"),
-        t("project3.feature2"),
-        t("project3.feature3"),
-        t("project3.feature4"),
-      ],
-      challenges: [
-        t("project3.challenge1"),
-        t("project3.challenge2"),
-        t("project3.challenge3"),
-      ],
-      linear: "from-emerald-500/30 to-green-500/30",
+      viewGithubLink: "https://github.com/guidossan/repo-imgs",
     },
   ]
 
@@ -192,20 +172,26 @@ export function Projects() {
                 </div>
 
                 <div className="flex gap-4 pt-4">
+                  {project.viewDemoLink && (
+                    <motion.a
+                      href={project.viewDemoLink}
+                      target="_blank"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-primary-foreground transition-colors hover:bg-primary/90"
+                      rel="noopener"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      {t("projects.viewDemo")}
+                    </motion.a>
+                  )}
                   <motion.a
-                    href="/"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-primary-foreground transition-colors hover:bg-primary/90"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                    {t("projects.viewDemo")}
-                  </motion.a>
-                  <motion.a
-                    href="/"
+                    href={project.viewGithubLink}
+                    target="_blank"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 transition-colors hover:bg-secondary/80"
+                    rel="noopener"
                   >
                     <FolderGit2 className="h-4 w-4" />
                     {t("projects.viewGithub")}

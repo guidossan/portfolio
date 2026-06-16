@@ -8,10 +8,10 @@ export function About() {
   const { t } = useLanguage()
 
   const stats = [
-    { label: t("about.years"), value: "5+", icon: Code2 },
-    { label: t("about.projects"), value: "30+", icon: Target },
+    { label: t("about.years"), value: "3+", icon: Code2 },
+    { label: t("about.projects"), value: "5+", icon: Target },
     { label: t("about.technologies"), value: "20+", icon: Zap },
-    { label: t("about.clients"), value: "15+", icon: Users },
+    { label: t("about.clients"), value: "1+", icon: Users },
   ]
 
   return (
@@ -36,16 +36,9 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
-              {t("about.p1")}
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {t("about.p2")}
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {t("about.p3")}
+              {t("about.description")}
             </p>
           </motion.div>
 

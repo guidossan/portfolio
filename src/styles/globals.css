@@ -144,3 +144,7 @@
     scroll-behavior: auto;
   }
 }
+
+.profile-photo {
+  background-image: url("/fotoPortfolio.png");
+}

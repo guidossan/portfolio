@@ -1,5 +1,6 @@
 "use client"
 
+import emailjs from "emailjs-com"
 import {
   CheckCircle2,
   Clock,
@@ -11,32 +12,54 @@ import {
 } from "lucide-react"
 import { motion } from "motion/react"
 import { useState } from "react"
+import { useForm } from "react-hook-form"
+import { toast } from "sonner"
+import { getErrorMessage } from "@/lib/error"
 import { useLanguage } from "../app/contexts/LanguageContext"
+
+type ContactFormData = {
+  name: string
+  email: string
+  message: string
+}
 
 export function Contact() {
   const { t } = useLanguage()
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitted(true)
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({ name: "", email: "", message: "" })
-    }, 3000)
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>()
+
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
+        {
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID ?? "",
+      )
+      setIsSubmitted(true)
+      reset()
+      setTimeout(() => setIsSubmitted(false), 3000)
+    } catch (error) {
+      toast.error(getErrorMessage(error), { position: "bottom-center" })
+    }
   }
 
   const contactInfo = [
     {
       icon: Mail,
       label: t("contact.email"),
-      value: "developer@example.com",
-      href: "mailto:developer@example.com",
+      value: "lormsl2003@gmail.com",
+      href: "mailto:lormsl2003@gmail.com",
     },
     {
       icon: MapPin,
@@ -118,7 +141,7 @@ export function Contact() {
 
             <div className="flex gap-4">
               <motion.a
-                href="https://github.com"
+                href="https://github.com/guidossan"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -128,7 +151,7 @@ export function Contact() {
                 <FolderGit2 className="h-5 w-5" />
               </motion.a>
               <motion.a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/guilherme-martins-lorenzini/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -138,7 +161,7 @@ export function Contact() {
                 <Link className="h-5 w-5" />
               </motion.a>
               <motion.a
-                href="mailto:developer@example.com"
+                href="mailto:lormsl2003@gmail.com"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card transition-all hover:border-violet-500/50"
@@ -158,7 +181,7 @@ export function Contact() {
           >
             <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-violet-500/10 to-blue-500/10 blur-lg" />
             <form
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmit(onSubmit)}
               className="relative space-y-6 rounded-2xl border border-border/50 bg-card p-8 backdrop-blur-sm"
             >
               <div>
@@ -166,15 +189,18 @@ export function Contact() {
                   {t("contact.form.name")}
                 </label>
                 <input
-                  type="text"
                   id="name"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  required
+                  type="text"
+                  {...register("name", {
+                    required: t("Nome é obrigatório para enviar e-mail."),
+                  })}
                   className="w-full rounded-lg border border-border bg-background px-4 py-3 transition-colors focus:border-violet-500 focus:outline-none"
                 />
+                {errors.name && (
+                  <p className="mt-1 text-red-500 text-sm">
+                    {errors.name.message}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -182,15 +208,22 @@ export function Contact() {
                   {t("contact.form.email")}
                 </label>
                 <input
-                  type="email"
                   id="email"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  required
+                  type="email"
+                  {...register("email", {
+                    required: t("Email é obrigatório para enviar e-mail."),
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: t("contact.form.email.invalid"),
+                    },
+                  })}
                   className="w-full rounded-lg border border-border bg-background px-4 py-3 transition-colors focus:border-violet-500 focus:outline-none"
                 />
+                {errors.email && (
+                  <p className="mt-1 text-red-500 text-sm">
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -199,21 +232,24 @@ export function Contact() {
                 </label>
                 <textarea
                   id="message"
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
-                  required
                   rows={5}
+                  {...register("message", {
+                    required: t("Mensagem é obrigatória para enviar e-mail."),
+                  })}
                   className="w-full resize-none rounded-lg border border-border bg-background px-4 py-3 transition-colors focus:border-violet-500 focus:outline-none"
                 />
+                {errors.message && (
+                  <p className="mt-1 text-red-500 text-sm">
+                    {errors.message.message}
+                  </p>
+                )}
               </div>
 
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                disabled={isSubmitted}
+                disabled={isSubmitting || isSubmitted}
                 className="flex w-full items-center justify-center gap-2 rounded-lg bg-linear-to-r from-violet-500 to-blue-500 px-6 py-4 text-white transition-all hover:from-violet-600 hover:to-blue-600 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isSubmitted ? (
