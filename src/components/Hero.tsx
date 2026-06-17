@@ -2,8 +2,10 @@
 
 import { ArrowRight, FolderGit2, Link, Mail } from "lucide-react"
 import { motion } from "motion/react"
+import { FaWhatsapp } from "react-icons/fa6"
 import { useLanguage } from "../app/contexts/LanguageContext"
 import { ProfilePhoto } from "./ProfilePhoto"
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip"
 
 export function Hero() {
   const { t } = useLanguage()
@@ -92,35 +94,74 @@ export function Hero() {
             </button>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex items-center gap-4 pt-4"
-          >
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg bg-secondary/50 p-2 transition-colors hover:bg-secondary"
-            >
-              <FolderGit2 className="h-5 w-5" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg bg-secondary/50 p-2 transition-colors hover:bg-secondary"
-            >
-              <Link className="h-5 w-5" />
-            </a>
-            <a
-              href="mailto:developer@example.com"
-              className="rounded-lg bg-secondary/50 p-2 transition-colors hover:bg-secondary"
-            >
-              <Mail className="h-5 w-5" />
-            </a>
-          </motion.div>
+          <div className="flex gap-4">
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <motion.a
+                  href="https://wa.me/5541935008281?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20entrar%20em%20contato%21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card transition-all hover:border-violet-500/50"
+                >
+                  <FaWhatsapp className="h-5 w-5" />
+                </motion.a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>WhatsApp</p>
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <motion.a
+                  href="https://github.com/guidossan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card transition-all hover:border-violet-500/50"
+                >
+                  <FolderGit2 className="h-5 w-5" />
+                </motion.a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>GitHub</p>
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <motion.a
+                  href="https://www.linkedin.com/in/guilherme-martins-lorenzini/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card transition-all hover:border-violet-500/50"
+                >
+                  <Link className="h-5 w-5" />
+                </motion.a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>LinkedIn</p>
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <motion.a
+                  href="mailto:guimsl2004@gmail.com"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card transition-all hover:border-violet-500/50"
+                >
+                  <Mail className="h-5 w-5" />
+                </motion.a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Email</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
         </div>
 
         <ProfilePhoto />
