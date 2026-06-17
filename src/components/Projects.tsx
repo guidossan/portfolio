@@ -14,8 +14,7 @@ export function Projects() {
       name: t("project1.name"),
       tagline: t("project1.tagline"),
       description: t("project1.description"),
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBkYXJrJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3OTE0OTIwMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      image: "/listaTarefas.png",
       tech: ["Angular", "TypeScript", "Node.js", "Tailwind CSS"],
       features: [
         t("project1.feature1"),
@@ -82,7 +81,6 @@ export function Projects() {
                 index % 2 === 1 ? "lg:grid-flow-dense" : ""
               }`}
             >
-              {/* Project Image/Mockup */}
               <div
                 className={`group relative ${index % 2 === 1 ? "lg:col-start-2" : ""}`}
               >
@@ -92,8 +90,8 @@ export function Projects() {
                 <div className="relative overflow-hidden rounded-2xl border border-border/50 transition-all group-hover:border-violet-500/50">
                   <div className="relative aspect-video">
                     <Image
-                      width={150}
-                      height={100}
+                      width={550}
+                      height={300}
                       src={project.image}
                       alt={project.name}
                       className="h-full w-full object-cover"
@@ -101,7 +99,6 @@ export function Projects() {
                     <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent" />
                   </div>
 
-                  {/* Floating UI Elements */}
                   <div className="absolute top-4 right-4 flex gap-2">
                     <motion.div
                       whileHover={{ scale: 1.1 }}
@@ -116,7 +113,6 @@ export function Projects() {
                 </div>
               </div>
 
-              {/* Project Details */}
               <div
                 className={`space-y-6 ${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}
               >
