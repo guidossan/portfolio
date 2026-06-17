@@ -26,6 +26,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.experience": "Experience",
     "nav.contact": "Contact",
     "nav.resume": "Resume",
+    "nav.resume.download": "resume.pdf",
 
     // Hero
     "hero.badge1": "Fullstack Engineer",
@@ -141,6 +142,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.experience": "Experiência",
     "nav.contact": "Contato",
     "nav.resume": "Currículo",
+    "nav.resume.download": "curriculo.pdf",
 
     // Hero
     "hero.badge1": "Desenvolvedor Fullstack",

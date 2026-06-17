@@ -47,6 +47,7 @@ export function Navbar() {
             <button
               type="button"
               className="hidden items-center gap-2 rounded-lg bg-primary px-4 py-2 text-primary-foreground text-sm transition-colors hover:bg-primary/90 md:flex"
+              onClick={() => window.open(t("nav.resume.download"), "_blank")}
             >
               <Download className="h-4 w-4" />
               {t("nav.resume")}
