@@ -3,6 +3,7 @@
 import { FolderGit2, Heart, Link, Mail } from "lucide-react"
 import { motion } from "motion/react"
 import { useLanguage } from "../app/contexts/LanguageContext"
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip"
 
 export function Footer() {
   const { t } = useLanguage()
@@ -25,36 +26,51 @@ export function Footer() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex items-center gap-4"
-          >
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg bg-secondary/50 p-2 transition-colors hover:bg-secondary"
-            >
-              <FolderGit2 className="h-5 w-5" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg bg-secondary/50 p-2 transition-colors hover:bg-secondary"
-            >
-              <Link className="h-5 w-5" />
-            </a>
-            <a
-              href="mailto:developer@example.com"
-              className="rounded-lg bg-secondary/50 p-2 transition-colors hover:bg-secondary"
-            >
-              <Mail className="h-5 w-5" />
-            </a>
-          </motion.div>
+          <div className="flex items-center gap-4">
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <motion.a
+                  href="https://github.com/guidossan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg bg-secondary/50 p-2 transition-colors hover:bg-secondary"
+                >
+                  <FolderGit2 className="h-5 w-5" />
+                </motion.a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>GitHub</p>
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <motion.a
+                  href="https://www.linkedin.com/in/guilherme-martins-lorenzini/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg bg-secondary/50 p-2 transition-colors hover:bg-secondary"
+                >
+                  <Link className="h-5 w-5" />
+                </motion.a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>LinkedIn</p>
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <motion.a
+                  href="mailto:guimsl2004@gmail.com"
+                  className="rounded-lg bg-secondary/50 p-2 transition-colors hover:bg-secondary"
+                >
+                  <Mail className="h-5 w-5" />
+                </motion.a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Email</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
         </div>
 
         <motion.div

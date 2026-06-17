@@ -13,9 +13,11 @@ import {
 import { motion } from "motion/react"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
+import { FaWhatsapp } from "react-icons/fa6"
 import { toast } from "sonner"
 import { getErrorMessage } from "@/lib/error"
 import { useLanguage } from "../app/contexts/LanguageContext"
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip"
 
 type ContactFormData = {
   name: string
@@ -58,8 +60,8 @@ export function Contact() {
     {
       icon: Mail,
       label: t("contact.email"),
-      value: "lormsl2003@gmail.com",
-      href: "mailto:lormsl2003@gmail.com",
+      value: "guimsl2004@gmail.com",
+      href: "mailto:guimsl2004@gmail.com",
     },
     {
       icon: MapPin,
@@ -140,34 +142,72 @@ export function Contact() {
             </div>
 
             <div className="flex gap-4">
-              <motion.a
-                href="https://github.com/guidossan"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card transition-all hover:border-violet-500/50"
-              >
-                <FolderGit2 className="h-5 w-5" />
-              </motion.a>
-              <motion.a
-                href="https://www.linkedin.com/in/guilherme-martins-lorenzini/"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card transition-all hover:border-violet-500/50"
-              >
-                <Link className="h-5 w-5" />
-              </motion.a>
-              <motion.a
-                href="mailto:lormsl2003@gmail.com"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card transition-all hover:border-violet-500/50"
-              >
-                <Mail className="h-5 w-5" />
-              </motion.a>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <motion.a
+                    href="https://wa.me/5541935008281?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20entrar%20em%20contato%21"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card transition-all hover:border-violet-500/50"
+                  >
+                    <FaWhatsapp className="h-5 w-5" />
+                  </motion.a>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>WhatsApp</p>
+                </TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <motion.a
+                    href="https://github.com/guidossan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card transition-all hover:border-violet-500/50"
+                  >
+                    <FolderGit2 className="h-5 w-5" />
+                  </motion.a>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>GitHub</p>
+                </TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <motion.a
+                    href="https://www.linkedin.com/in/guilherme-martins-lorenzini/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card transition-all hover:border-violet-500/50"
+                  >
+                    <Link className="h-5 w-5" />
+                  </motion.a>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>LinkedIn</p>
+                </TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <motion.a
+                    href="mailto:guimsl2004@gmail.com"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card transition-all hover:border-violet-500/50"
+                  >
+                    <Mail className="h-5 w-5" />
+                  </motion.a>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Email</p>
+                </TooltipContent>
+              </Tooltip>
             </div>
           </motion.div>
 
